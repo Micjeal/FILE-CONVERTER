@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="FILE_CONVERTER.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FILE_CONVERTER"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        
+        <StackPanel HorizontalAlignment="Center" 
+                    Height="auto" Width="auto" Spacing="20"
+                    VerticalAlignment="Center">
+            <TextBlock Text="ADVANCED FILE CONVERTER"
+    FontSize="16" HorizontalAlignment="Center"
+    FontWeight="Bold" Foreground="CadetBlue"
+    />
+           
+            <Border CornerRadius="5" BorderBrush="LightCoral" BorderThickness="2">
+                <StackPanel >
+                <TextBlock  Text="choose file" HorizontalAlignment="Center"/>
+                <Button x:Name="selectfiles" 
+                    Content="Select Files" CornerRadius="5"
+                    HorizontalAlignment="Center" Click="selectbtn"/>
+            </StackPanel>
+            </Border>
+            <Border CornerRadius="5" BorderBrush="LightCoral" BorderThickness="2">
+                <StackPanel >
+            <ComboBox  x:Name="formatcb" HorizontalAlignment="Center"
+                       PlaceholderText="choose format">
+                <ComboBoxItem Content="PDF"/>
+                <ComboBoxItem Content="DOCX" />
+            </ComboBox>
+        </StackPanel>
+        </Border>
+            <ProgressBar x:Name="ProgresBAR" HorizontalAlignment="Center"
+                         Minimum="0"
+                         Maximum="100"
+                         Visibility="Collapsed"/>
+            <Button  HorizontalAlignment="Center"
+                       CornerRadius="5"   
+                    x:Name="convertbtn"
+                    Content="Convert file" Click="Convertbutton_click"/>
+            <Border CornerRadius="5" BorderBrush="LightCoral" BorderThickness="2">
+                <StackPanel >
+                    <TextBlock Text="Awaiting file selection" 
+                       HorizontalAlignment="Center"
+                       x:Name="statusTb"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>
